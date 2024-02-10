@@ -1,0 +1,259 @@
+:root{
+    --primary: #c8ad7f;
+    --school: #588157;
+    --personal:#92664a;
+    --light: #EEE;
+    --grey: #888;
+    --dark:#242526;
+    --danger:#de0a26;
+
+    --shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+    --school-glow: 0px 0px 4px rgba(88, 129, 87, 0.75);
+    --personal-glow: 0px 0px 4px rgba(146, 102, 74, 0.75);
+}
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', sans-serif;
+}
+
+input:not([type="radio"]):not([type="checkbox"]), button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+}
+
+body{
+    background: var(--light);
+    color: var(--dark);
+}
+
+section{
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+h3{
+    color: var(--dark);
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+h4{
+    color: var(--grey);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.create-todo input[type="text"]{
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    padding: 16px 24px;
+    color: var(--dark);
+    background-color: #FFF;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.create-todo .options{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.create-todo .options label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background-color: #FFF;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+    display: none;
+}
+
+.bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--school);
+    box-shadow: var(--school-glow);
+}
+
+.bubble.personal{
+    border-color: var(--personal);
+    box-shadow: var(--personal-glow);
+}
+
+.bubble::after{
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: var(--school);
+    box-shadow: var(--school-glow);
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+}
+
+.bubble.personal::after{
+    background-color: var(--personal);
+    box-shadow: var(--personal-glow);
+}
+
+input:checked ~ .bubble::after{
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+.create-todo .options label div{
+    color: var(--dark);
+    font-size: 24px;
+    margin-top: 16px;
+}
+
+.create-todo input[type="submit"]{
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    padding: 16px 24px;
+    color: #FFF;
+    background-color: var(--primary);
+    border-radius: 8px;
+    box-shadow: var(--personal-glow);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.create-todo input[type="submit"]:hover{
+    opacity: 0.75;
+}
+
+.todo-list .list{
+    margin: 16px 0;
+}
+
+.todo-list .todo-item{
+    display: flex;
+    align-items: center;
+    background-color: #FFF;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+}
+
+.todo-item label{
+    display: block;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.todo-item .todo-content{
+    flex: 1 1 0%;
+}
+
+.todo-item .todo-content input{
+    color: var(--dark);
+    font-size: 18px;
+}
+
+.todo-item .actions{
+    display: flex;
+    align-items: center;
+}
+
+
+.todo-item .actions button{
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+    color: #FFF;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.todo-item .actions button:hover{
+    opacity: 0.67;
+}
+
+.todo-item .actions .edit{
+    background-color: var(--primary);
+    margin-right: 8px;
+}
+
+.todo-item .actions .delete{
+    background-color: var(--danger);
+}
+
+.todo-item.done .todo-content input{
+    text-decoration: line-through;
+    color: var(--grey);
+}
+
+ .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12.5vh;
+    background-color: #ba947b;
+}
+
+.timer {
+    font-family:'Playfair Display', sans-serif;
+    padding: 24px 32px;
+    border-radius: 30px;
+  }
+  
+  .timer__part {
+    font-size: 60px;
+    font-weight: bold;
+    margin-right: 2px;
+  }
+  
+  .timer__button {
+    width: 60px;
+    height: 60px;
+    margin-left: 16px;
+    border-radius: 35%;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .timer__button--start {
+    background: #01796f;
+  }
+  
+  .timer__button--work {
+    background: #999b84;
+  }
+
+  .timer__button--shortbreak {
+    background: #c2b19c;
+  }
+  
+  .timer__button--longbreak {
+    background: #ebded4;
+  }

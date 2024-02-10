@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel = "stylesheet" href="main.css" />
+</head>
+<body>
+        <div class="container">
+            <section class="time">
+                <div class="timer"> 
+                    <span class="timer__part timer--part--minutes">00</span>
+                    <span class="timer__part">:</span>
+                    <span class="timer__part timer--part--seconds">00</span>
+                    <button type="button" class="timer__button timer__button--control timer__button--start">
+                        <span class="material-icons">play_arrow</span>
+                    </button>
+                    <button type="button" class="timer__button timer__button--work">
+                        <span class="material-icons">school</span>
+                    </button>
+                    <button type="button" class="timer__button timer__button--shortbreak">
+                        <span class="material-icons">music_note</span>
+                    </button>
+                    <button type="button" class="timer__button timer__button--longbreak">
+                        <span class="material-icons">sports_esports</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+        <section class="create-todo">
+            <h3>CREATE A TO-DO LIST</h3>
+            <form id="new-todo-list">
+                <h4>What's on your todo list?</h4>
+                <input 
+                    type="text" 
+                    name="content" 
+                    id="content" 
+                    placeholder = "e.g. Data Structures Lab">
+                <h4>Pick a Category</h4>
+                <div class="options">
+                    <label>
+                        <input 
+                            type="radio" 
+                            name = "category" 
+                            id="category1" 
+                            value ="school">
+                            <span class="bubble school"></span>
+                            <div>School</div>
+                    </label>
+                    
+                    <label>
+                        <input 
+                            type="radio" 
+                            name = "category" 
+                            id="category2" 
+                            value ="personal">
+                            <span class="bubble personal"></span>
+                            <div>Personal</div>
+                    </label>
+                </div>
+                <input type="submit" value="Add todo"/>
+            </form>
+        </section>
+        <section class="todo-list">
+            <h3>TODO LIST</h3>
+            <div class="list" id="todo-list"></div>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
