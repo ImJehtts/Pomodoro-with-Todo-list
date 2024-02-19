@@ -14,14 +14,26 @@ window.addEventListener('load', () => {
 
 
     document.querySelector('.timer__button--start').addEventListener('click', toggleTimer);
-    document.querySelector('.timer__button--work').addEventListener('click', () => setTime(25, 0));
-    document.querySelector('.timer__button--shortbreak').addEventListener('click', () => setTime(5, 0));
+  document.querySelector('.timer__button--work').addEventListener('click', displayQuoteAndStartWorkTimer);    document.querySelector('.timer__button--shortbreak').addEventListener('click', () => setTime(5, 0));
     document.querySelector('.timer__button--longbreak').addEventListener('click', () => setTime(10, 0));
 
 
     DisplayToDos();
 });
 
+function displayQuoteAndStartWorkTimer() {
+    fetch('https://api.quotable.io/random')
+        .then(response => response.json())
+        .then(data => {
+            const { content, author } = data;
+            alert(`"${content}" - ${author}`);
+            setTime(25, 0); 
+        })
+        .catch(error => {
+            console.error('Error fetching quote:', error);
+            alert('Failed to fetch a quote. Please try again later.');
+        });
+}
 
 function addTodo(e) {
     e.preventDefault();
