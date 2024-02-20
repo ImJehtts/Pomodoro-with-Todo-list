@@ -20,9 +20,9 @@ window.addEventListener('load', () => {
 
     DisplayToDos();
 });
-
+const url = 'https://api.quotable.io/random?tags=education%7Cfuture%7Cinspirational%7Clife%7Cliterature%7Csuccess%7Cwisdom';
 function displayQuoteAndStartWorkTimer() {
-    fetch('https://api.quotable.io/random')
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             const { content, author } = data;
